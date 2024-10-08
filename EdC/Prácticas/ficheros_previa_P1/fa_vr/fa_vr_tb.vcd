@@ -1,0 +1,80 @@
+$date
+	Tue Oct  8 19:27:04 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module fa_vr_tb $end
+$var wire 1 ! test_sum $end
+$var wire 1 " test_carry $end
+$var reg 1 # test_a $end
+$var reg 1 $ test_b $end
+$var reg 1 % test_c_in $end
+$scope module fa_prueba $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % c_in $end
+$var wire 1 " c_out $end
+$var wire 1 & sum1 $end
+$var wire 1 ' carry2 $end
+$var wire 1 ( carry1 $end
+$var wire 1 ! Sum $end
+$scope module ha1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ( carry $end
+$var wire 1 & sum $end
+$upscope $end
+$scope module ha2 $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 ' carry $end
+$var wire 1 ! sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x(
+x'
+x&
+0%
+0$
+0#
+x"
+x!
+$end
+#100
+0"
+0'
+0(
+0&
+#200
+0!
+#2000
+1$
+#2100
+1&
+#2200
+1!
+#4000
+1%
+0$
+1#
+#4100
+1"
+0!
+1'
+#6000
+1$
+#6100
+0&
+1(
+#6200
+1!
+0'
+#8000
