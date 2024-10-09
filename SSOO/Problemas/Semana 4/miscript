@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# sysinfo Un script que informa del estado del sistema
+
+#sort << _EOF_
+#AAAA
+#1234
+#DDDD
+#XXXX
+#_EOF_
+
+TITLE_TEXT="Información del sistema"
+NOW=$(date +"%x %R %Z") # El más significa que lo que viene detrás es un formato.
+TIMESTAMP="Actualizado a $NOW"
+
+cat << _EOF_
+= $TITLE_TEXT ($HOSTNAME) =
+
+== información sobre los procesos: ==
+
+ Datos del proceso 1
+ Datos del proceso 2
+
+== Información de red: ==
+
+  Datos de la interfaz de red 1
+  Datos de la interfaz de red 2
+
+Actualizando el $NOW
+$TIMESTAMP 
+_EOF_

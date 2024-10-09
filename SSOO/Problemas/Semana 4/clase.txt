@@ -1,0 +1,5 @@
+vi .bashrc
+
+export PATH=$PATH:/opt/google/chrome
+utilizar las shell de no-login
+
