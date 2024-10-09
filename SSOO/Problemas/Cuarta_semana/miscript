@@ -28,7 +28,7 @@ system_info() {
 }
 
 show_uptime() {
-  echo " ${TEXT_GREEN}Tiepo de encendido del sistema $TEXT_RESET"
+  echo " ${TEXT_GREEN}Tiempo de encendido del sistema $TEXT_RESET"
   echo
   echo -n "  "
   uptime
@@ -43,7 +43,7 @@ drive_space() {
   fi
 }
 
-user_space() {
+user_is_root() {
   echo "Función no implementada"
   if test $USER = root; then # = if [$USER = root]
     echo "El usuario es root"
@@ -52,7 +52,7 @@ user_space() {
   fi
 }
 
-user_space() {
+user_is_root_alternative() {
   echo "Función no implementada"
   if test -x /etc; then # = if [-x /etc]
     echo "El usuario es root"
@@ -71,7 +71,9 @@ $(show_uptime)
 
 $(drive_space)
 
-$(user_space)
+$(user_is_root)
+
+$(user_is_root_alternative)
 
 ${TEXT_BLINK}== información sobre los procesos: ==$TEXT_RESET
 
