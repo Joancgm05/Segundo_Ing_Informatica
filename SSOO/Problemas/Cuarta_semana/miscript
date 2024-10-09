@@ -15,9 +15,9 @@ TIMESTAMP="Actualizado a $NOW"
 
 #Estilos
 TEXT_BLINK=$(tput blink)
-TEXT_RESET=$(tput sgr0)
-TEXT_GREEN=$(tput setaf2)
-TEXT_YELLOW=$(tput setaf3)
+TEXT_RESET=$(tput sgr 0)
+TEXT_GREEN=$(tput setaf 2)
+TEXT_YELLOW=$(tput setaf 3)
 
 #Funciones
 system_info() {
