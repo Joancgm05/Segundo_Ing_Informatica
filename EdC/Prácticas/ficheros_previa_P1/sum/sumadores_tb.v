@@ -21,7 +21,7 @@ sumadores sumadores_prueba (test_sum, test_carry, test_a, test_b, test_c_in);
 initial
 begin
   $monitor("tiempo=%0d a=%b b=%b c_in=%b suma=%b acarreo=%b", $time, test_a, test_b, test_c_in, test_sum, test_carry);
-  $dumpfile("fa_vr_tb.vcd");
+  $dumpfile("sumadores_tb.vcd");
   $dumpvars;
 
   //Algunos valores de prueba
