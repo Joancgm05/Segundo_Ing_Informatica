@@ -8,6 +8,8 @@
 #DDDD
 #XXXX
 #_EOF_
+
+
 # Configuración
 TITLE_TEXT="Información del sistema"
 NOW=$(date +"%x %R %Z") # El más significa que lo que viene detrás es un formato.
