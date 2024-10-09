@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# sysinfo Un script que informa del estado del sistema
+
+#sort << _EOF_
+#AAAA
+#1234
+#DDDD
+#XXXX
+#_EOF_
+# Configuración
+TITLE_TEXT="Información del sistema"
+NOW=$(date +"%x %R %Z") # El más significa que lo que viene detrás es un formato.
+TIMESTAMP="Actualizado a $NOW"
+
+#Estilos
+TEXT_BLINK=$(tput blink)
+TEXT_RESET=$(tput sgr0)
+TEXT_GREEN=$(tput setaf2)
+TEXT_YELLOW=$(tput setaf3)
+
+#Funciones
+system_info() {
+  echo " ${TEXT_YELLOW}Versión del sistema $TEXT_RESET"
+  echo
+  echo -n "  "
+  uname -a
+}
+
+show_uptime() {
+  echo " ${TEXT_GREEN}Tiepo de encendido del sistema $TEXT_RESET"
+  echo
+  echo -n "  "
+  uptime
+}
+
+drive_space() {
+  echo "Función no implementada"
+  if ls foo 2> /dev/null; then
+    echo "ls tuvo éxito"
+  else
+    echo "ls no tuvo éxito"
+  fi
+}
+
+user_space() {
+  echo "Función no implementada"
+  if test $USER = root; then # = if [$USER = root]
+    echo "El usuario es root"
+  else
+    echo "El usuario no es root es $USER"
+  fi
+}
+
+user_space() {
+  echo "Función no implementada"
+  if test -x /etc; then # = if [-x /etc]
+    echo "El usuario es root"
+  else
+    echo "El usuario no es root es $USER"
+  fi
+}
+
+
+cat << _EOF_
+= $TITLE_TEXT ($HOSTNAME) =
+
+$(system_info)
+
+$(show_uptime)
+
+$(drive_space)
+
+$(user_space)
+
+${TEXT_BLINK}== información sobre los procesos: ==$TEXT_RESET
+
+ Datos del proceso 1
+ Datos del proceso 2
+
+== Información de red: ==
+
+  Datos de la interfaz de red 1
+  Datos de la interfaz de red 2
+
+Actualizando el $NOW
+$TIMESTAMP 
+_EOF_
