@@ -7,6 +7,7 @@ begin
         Out = B;
     else 
         Out = A;
+        
 end
 
 endmodule
