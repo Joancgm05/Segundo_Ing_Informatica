@@ -1,4 +1,4 @@
-// Testbench para el módulo celda lógica
+// Testbench para el módulo celda lógica.
 
 `timescale 1 ns / 10 ps //Directiva que fija la unidad de tiempo de simulaci�n y el paso de simulaci�n
 
@@ -9,7 +9,7 @@ reg test_a, test_b;
 reg[1:0] test_s; //Ponemos las variables de entrada en reg porque las queremos inicializar.
 wire test_Out; // Dejamos la variable de salida en wire porque su valor lo definirá el multiplexor.
 
-//instancia del modulo a testear, con notaci�n de posiciones de argumentos 
+//instancia del modulo a testear, con notaci�n de posiciones de argumentos .
 cl cl_prueba(test_Out, test_a, test_b, test_s);
 
 initial

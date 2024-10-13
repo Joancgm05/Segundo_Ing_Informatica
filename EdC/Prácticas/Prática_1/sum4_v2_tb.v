@@ -13,11 +13,6 @@ wire test_c_out;
 //instancia del modulo a testear, con notaci�n de posiciones de argumentos 
 sum4_v2 sum4_prueba (test_S, test_c_out, test_a, test_b, test_c_in);
 
-//Lo siguiente comentado es una notaci�n alternativa para instanciar el m�dulo, los par�metros se denotan con un punto seguido del
-//nombre del par�metro en la definici�n original del m�dulo y entre par�ntesis a qu� se conecta en el modulo actual
-//no importa el orden de los par�metros definidos as� -?
-//ha_v1 ha1(.a(test_a), .b(test_b), .sum(test_S), .carry(test_c_out)); 
-
 initial
 begin
   $monitor("tiempo=%0d a=%b b=%b c_in=%b suma=%b acarreo=%b", $time, test_a, test_b, test_c_in, test_S, test_c_out);
