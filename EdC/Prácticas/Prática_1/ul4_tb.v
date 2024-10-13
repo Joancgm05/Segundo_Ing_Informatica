@@ -1,26 +1,26 @@
-// Testbench para el módulo celda lógica
+// Testbench para el módulo unidad lógica de 4 bits.
 
 `timescale 1 ns / 10 ps //Directiva que fija la unidad de tiempo de simulaci�n y el paso de simulaci�n
 
-module cl_tb;
+module ul4_tb;
 //declaracion de se�ales
 
-reg test_a, test_b;
+reg[3:0] test_a, test_b;
 reg[1:0] test_s; //Ponemos las variables de entrada en reg porque las queremos inicializar.
-wire test_Out; // Dejamos la variable de salida en wire porque su valor lo definirá el multiplexor.
+wire[3:0] test_Out; // Dejamos la variable de salida en wire porque su valor lo definirá el multiplexor.
 
 //instancia del modulo a testear, con notaci�n de posiciones de argumentos 
-cl cl_prueba(test_Out, test_a, test_b, test_s);
+ul4 ul4_prueba(test_Out, test_a, test_b, test_s);
 
 initial
 begin
   $monitor("tiempo=%0d a=%b b=%b s=%b Out=%b", $time, test_a, test_b, test_s, test_Out);
-  $dumpfile("cl_tb.vcd");
+  $dumpfile("ul4_tb.vcd");
   $dumpvars;
 
   // Inicializamos las señales.
-  test_a = 1'b0;
-  test_b = 1'b1;
+  test_a = 4'b0101;
+  test_b = 4'b1010;
   test_s = 2'b00;
   #20;
 
