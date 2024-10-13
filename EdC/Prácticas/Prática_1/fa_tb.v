@@ -9,7 +9,7 @@ reg test_a, test_b, test_c_in; //e han declarado reg porque queremos inicializar
 wire test_sum, test_carry; //se�ales de salida, se declaran como wire porque sus valores se fijan por el full adder
 
 //instancia del modulo a testear, con notaci�n de posiciones de argumentos 
-fa fa_prueba (test_sum, test_carry, test_a, test_b, test_c_in);
+fa fa_prueba (test_carry, test_sum, test_a, test_b, test_c_in);
 
 initial
 begin
