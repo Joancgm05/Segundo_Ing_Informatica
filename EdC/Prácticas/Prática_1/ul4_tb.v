@@ -24,17 +24,17 @@ begin
   test_s = 2'b00;
   #20;
 
-  // Cambiamos el valor a b.
+  // Cambiamos el valor a s.
 
   test_s = 2'b01;
   #20;
 
-  // Cambiamos valores de a y b y comprobamos que Out cambia en gtkwave ya que s = 1.
+  // Cambiamos el valor a s.
 
   test_s = 2'b10;
   #20;
 
-  // Cambiamos valor a a.
+  // Cambiamos el valor a s.
 
   test_s = 2'b11;
   #20;
