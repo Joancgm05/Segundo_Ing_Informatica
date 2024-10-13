@@ -1,11 +1,12 @@
-// Sumador completo de 4 bits
+// modulo sumador completo de 4 bits.
+
 module sum4(output wire[3:0] S, output wire c_out, input wire[3:0] A, input wire[3:0] B, input wire c_in);
 
-  wire c1, c2, c3;
-  
-  fa fa1 (c1, S[0], A[0], B[0], c_in);
-  fa fa2 (c2, S[1], A[1], B[1], c1);
-  fa fa3 (c3, S[2], A[2], B[2], c2);
-  fa fa4 (c_out, S[3], A[3], B[3], c3);
+  wire c1, c2, c3; // declaramos los cables internos.
+
+  fa fa0 (.sum(S[0]), .c_out(c1), .a(A[0]), .b(B[0]), .c_in(c_in)); //full adder de 1 bit (0).
+  fa fa1 (.sum(S[1]), .c_out(c2), .a(A[1]), .b(B[1]), .c_in(c1)); //full adder de 1 bit (0).
+  fa fa2 (.sum(S[2]), .c_out(c3), .a(A[2]), .b(B[2]), .c_in(c2)); //full adder de 1 bit (0).
+  fa fa3 (.sum(S[3]), .c_out(c_out), .a(A[3]), .b(B[3]), .c_in(c3)); //full adder de 1 bit (0).
 
 endmodule
