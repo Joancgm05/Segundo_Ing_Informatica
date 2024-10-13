@@ -12,7 +12,7 @@ module cl(output wire out, input wire a, b, input wire [1:0] S);
   not not1(salida_not, a);
 
   // Instanciación del multiplexor 4 a 1
-  mux4_1 mux4_1_1(Out, salida_and, salida_or, salida_xor, salida_not, S);
+  mux4_1 mux4_1_1(out, salida_and, salida_or, salida_xor, salida_not, S);
 
 
 endmodule
