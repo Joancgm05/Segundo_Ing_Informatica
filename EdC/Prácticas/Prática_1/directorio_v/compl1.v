@@ -6,10 +6,12 @@ module compl1(output wire [3:0] Out, input wire [3:0] Inp, input wire cpl);
   
     begin
       case (cpl)
+
         1:
           Out = ~(Inp);
         0:
           Out = Inp;
+          
       endcase
     end
 
