@@ -4,20 +4,52 @@
 
 # sysinfo - Un script que informa del estado del sistema
 
-TITLE="Información de mi sistema para $HOSTNAME"
+##### Constantes
+
+TITLE="Información del sistema para $HOSTNAME"
 RIGHT_NOW=$(date +"%x %r%Z")
 TIME_STAMP="Actualizada el $RIGHT_NOW por $USER"
+
+##### Estilos
+
 TEXT_BOLD=$(tput bold)
+TEXT_RED=$(tput setaf 1)
 TEXT_GREEN=$(tput setaf 2)
 TEXT_YELLOW=$(tput setaf 3)
-TEXT_RESET=$(tput)
+TEXT_RESET=$(tput sgr0)
+
+##### Funciones
+
+system_info() {
+  # Función de stub temporal
+  echo "función system_info"
+}
+
+show_uptime() {
+  echo "${TEXT_ULINE}Tiempo de encendido del sistema${TEXT_RESET}"
+  echo
+  uptime 
+}
+
+drive_space() {
+  # Función de stub temporal
+  echo "función drive_space"
+}
+
+home_space() {
+  # Función de stub temporal
+  echo "función home_space"
+}
+
+##### Programa principal
 
 cat << _EOF_
-$TEXT_BOLD$TITLE$TEXT_RESET
+${TEXT_RED}$TITLE${TEXT_RESET}
 
-$TEXT_GREEN$TIME_STAMP$TEXT_RESET
+${TEXT_YELLOW}$TIME_STAMP${TEXT_RESET}
 _EOF_
 
-# === $TITLE ===
-
-# $TIME_STAMP
+system_info
+show_uptime
+drive_space
+home_space
