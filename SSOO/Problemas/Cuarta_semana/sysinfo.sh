@@ -5,14 +5,19 @@
 # sysinfo - Un script que informa del estado del sistema
 
 TITLE="Información de mi sistema para $HOSTNAME"
-RIGHT_NOW=$(date +"% %r%Z") por $USER
+RIGHT_NOW=$(date +"%x %r%Z")
 TIME_STAMP="Actualizada el $RIGHT_NOW por $USER"
 TEXT_BOLD=$(tput bold)
 TEXT_GREEN=$(tput setaf 2)
+TEXT_YELLOW=$(tput setaf 3)
 TEXT_RESET=$(tput)
 
 cat << _EOF_
-=== $TITLE ===
+$TEXT_BOLD$TITLE$TEXT_RESET
 
-$TIME_STAMP
+$TEXT_GREEN$TIME_STAMP$TEXT_RESET
 _EOF_
+
+# === $TITLE ===
+
+# $TIME_STAMP
