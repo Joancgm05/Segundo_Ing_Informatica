@@ -43,9 +43,9 @@ drive_space() {
 }
 
 home_space() {
-  echo "${TEXT_RED}Mostrando espacio ocupado por cada uno de los subdirectorios en /home...${TEXT_RESET}"
+  echo "${TEXT_RED}Mostrando espacio ocupado por cada uno de los subdirectorios en ${HOME}...${TEXT_RESET}"
   echo
-  du -s /home/* | sort -r
+  du -s ${HOME} | sort -r
   echo
 }
 
