@@ -43,27 +43,28 @@ drive_space() {
 }
 
 home_space() {
-  # Función de stub temporal
-  echo "función home_space"
+  echo "${TEXT_RED}Mostrando espacio ocupado por cada uno de los subdirectorios en /home...${TEXT_RESET}"
+  echo
+  du -s /home/* | sort -r
   echo
 }
 
 is_a_file() {
   if [ -f clase.txt ]; then
-    echo "Tienes un archivo clase.txt Todo correcto"
+    echo "${TEXT_GREEN}Tienes un archivo clase.txt Todo correcto${TEXT_RESET}"
     echo
   else
-    echo "No tienes un archivo clase.txt todo mal :("
+    echo "${TEXT_RED}No tienes un archivo clase.txt todo mal :(${TEXT_RESET}"
     echo
   fi
 }
 
 user_is_root() {
   if [ "$USER" != root ]; then
-    echo "No tienes permisos de superusuario"
+    echo "${TEXT_RED}No tienes permisos de superusuario${TEXT_RESET}"
     echo
   else
-    echo "Tienes permisos de superusuario"
+    echo "${TEXT_GREEN}Tienes permisos de superusuario${TEXT_RESET}"
     echo
   fi
 }
@@ -85,6 +86,8 @@ $(drive_space)
 $(is_a_file)
 
 $(user_is_root)
+
+$(home_space)
 
 _EOF_
 
