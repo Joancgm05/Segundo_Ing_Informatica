@@ -16,8 +16,8 @@ which_du() {
 
 home_ocupation() {
   echo "Se mostrará la información de la ocupación total del directorio $HOME"
-  du -c -h /home | tr -s ' ' | cut -f 1 | tail -n1
-  echo
+  du -c -h /home | tr -s ' ' | cut -f 1 | tail -n1 
+  echo -e '\n'
 }
 
 cat << _EOF

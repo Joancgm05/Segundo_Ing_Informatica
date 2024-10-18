@@ -22,15 +22,13 @@ TEXT_RESET=$(tput sgr0)  # Restear texto a valores originales.
 ##### Funciones
 
 system_info() {
-  echo "${TEXT_ULINE}Versión del sistema${TEXT_RESET}"
-  echo
+  echo -e "${TEXT_ULINE}Versión del sistema${TEXT_RESET}\n"
   uname -a  # El comando uname se utiliza para mostrar información 
   echo      # del sistema, la opción -a la muestra toda.
 }
 
 show_uptime() {
-  echo "${TEXT_ULINE}Tiempo de encendido del sistema${TEXT_RESET}"
-  echo
+  echo -e "${TEXT_ULINE}Tiempo de encendido del sistema${TEXT_RESET}\n"
   uptime 
   echo
 }
@@ -42,29 +40,24 @@ drive_space() {
 }
 
 home_space() {
-  echo "${TEXT_RED}Mostrando espacio ocupado por cada uno de los subdirectorios en ${HOME}...${TEXT_RESET}"
-  echo
+  echo -e "${TEXT_RED}Mostrando espacio ocupado por cada uno de los subdirectorios en ${HOME}...${TEXT_RESET}\n"
   du -s ${HOME} | sort -r
   echo
 }
 
 is_a_file() {
   if [ -f clase.txt ]; then
-    echo "${TEXT_GREEN}Tienes un archivo clase.txt Todo correcto${TEXT_RESET}"
-    echo
+    echo -e "${TEXT_GREEN}Tienes un archivo clase.txt Todo correcto${TEXT_RESET}\n"
   else
-    echo "${TEXT_RED}No tienes un archivo clase.txt todo mal :(${TEXT_RESET}"
-    echo
+    echo -e "${TEXT_RED}No tienes un archivo clase.txt todo mal :(${TEXT_RESET}\n"
   fi
 }
 
 user_is_root() {
   if [ "$USER" != root ]; then
-    echo "${TEXT_RED}No tienes permisos de superusuario${TEXT_RESET}"
-    echo
+    echo -e "${TEXT_RED}No tienes permisos de superusuario${TEXT_RESET}\n"
   else
-    echo "${TEXT_GREEN}Tienes permisos de superusuario${TEXT_RESET}"
-    echo
+    echo -e "${TEXT_GREEN}Tienes permisos de superusuario${TEXT_RESET}\n"
   fi
 }
 
