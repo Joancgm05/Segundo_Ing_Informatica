@@ -9,7 +9,6 @@
 TITLE="Información del sistema para $HOSTNAME"
 RIGHT_NOW=$(date +"%x %r%Z")
 TIME_STAMP="Actualizada el $RIGHT_NOW por $USER"
-DRIVE_SPACE=$(df -h | tr -s ' ' | cut -d ' ' -f 3,5,6)
 
 ##### Estilos
 
