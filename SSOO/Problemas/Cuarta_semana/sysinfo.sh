@@ -12,17 +12,20 @@ TIME_STAMP="Actualizada el $RIGHT_NOW por $USER"
 
 ##### Estilos
 
-TEXT_BOLD=$(tput bold)
-TEXT_RED=$(tput setaf 1)
-TEXT_GREEN=$(tput setaf 2)
-TEXT_YELLOW=$(tput setaf 3)
-TEXT_RESET=$(tput sgr0)
+TEXT_BOLD=$(tput bold)  # Poner texto en negrita.
+TEXT_ULINE=$(tput sgr 0 1)  # Poner texto subrayado.
+TEXT_RED=$(tput setaf 1)  # Poner texto en rojo.
+TEXT_GREEN=$(tput setaf 2)  # Poner texto en verde.
+TEXT_YELLOW=$(tput setaf 3)  # Poner texto en amarillo.
+TEXT_RESET=$(tput sgr0)  # Restear texto a valores originales.
 
 ##### Funciones
 
 system_info() {
-  # Función de stub temporal
-  echo "función system_info"
+  echo "${TEXT_ULINE}Versión del sistema${TEXT_RESET}"
+  echo
+  uname -a  # El comando uname se utiliza para mostrar información 
+            # del sistema, la opción -a la muestra toda.
 }
 
 show_uptime() {
@@ -32,8 +35,8 @@ show_uptime() {
 }
 
 drive_space() {
-  # Función de stub temporal
-  echo "función drive_space"
+  echo "Mostrando espacio ocupado por las particiones / discos duros del sitema..."
+  df -h | tr -s ' ' | cut -d ' ' -f 3,5,6
 }
 
 home_space() {
